@@ -1,6 +1,6 @@
 import 'phaser';
 import Button from '../Objects/Button';
-import RPSButton from '../Objects/Button';
+import RPSButton from '../Objects/RPSButton';
 
 export default class GameScene extends Phaser.Scene {
   constructor () {
@@ -14,10 +14,10 @@ export default class GameScene extends Phaser.Scene {
  
   create () {
     console.log("GameScene: create()")
-    
-    this.addRPSButton(240, 300, 'rock')
-    this.addRPSButton(400, 300, 'paper');
-    this.addRPSButton(560, 300, 'scissors');
+
+    this.rockButton = new RPSButton(this, 240, 300, 'rock');
+    this.paperButton = new RPSButton(this, 400, 300, 'paper');
+    this.scissorsButton = new RPSButton(this, 560, 300, 'scissors');
 
     this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Menu', 'Title');
   }
